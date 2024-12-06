@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  list-style: none;
+}
+body {
+  min-height: 200vh;
+  overflow-x: hidden;
+  background: rgb(60, 60, 100);
+  background: linear-gradient(
+    0deg,
+    rgba(31, 52, 128, 1) 0%,
+    rgba(60, 60, 100, 1) 100%
+  );
+  text-align: center;
+}
+.mouse {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
+}
+#cercle1 {
+  height: 10px;
+  width: 10px;
+  background: rgba(83, 11, 229, 0.978);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+#cercle2 {
+  height: 50px;
+  width: 50px;
+  background: rgb(248, 248, 248);
+  transform: translate(-50%, -50%);
+  transition: 0.15s ease;
+  mix-blend-mode: difference;
+}
+#cercle3 {
+  height: 100px;
+  width: 100px;
+  background: rgb(35, 34, 34);
+  transform: translate(-50%, -50%);
+  transition: 0.2s ease;
+  mix-blend-mode: difference;
+}
+#side-bar {
+  position: fixed;
+  left: -20%;
+  top: 100px;
+  height: 500px;
+  width: 20%;
+  background: whitesmoke;
+  transition: 0.5s ease;
+  .burger {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    z-index: 6;
+    cursor: pointer;
+    height: 75px;
+    width: 75px;
+    span {
+      display: block;
+      height: 10px;
+      width: 50px;
+      margin: 5px;
+      background: whitesmoke;
+      cursor: pointer;
+    }
+  }
+  p {
+    font-size: 2rem;
+    margin: 150px 15px;
+    padding: 15px;
+    background: rgb(60, 60, 100);
+  }
+}
+#side-bar.active {
+  left: 0;
+  box-shadow: 3px 3px 1px 1px black;
+  z-index: 6;
+}
+.active {
+  span {
+    position: absolute;
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+.nav {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(60, 60, 100, 0.5) 1%,
+    rgb(176, 176, 176) 100%
+  );
+  position: fixed;
+  transition: 0.6s ease-in-out;
+  z-index: 5;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+
+    li {
+      font-size: 1.5rem;
+      z-index: 6;
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          scale: 1.2;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+h1 {
+  margin-top: 100px;
+  font-size: 5rem;
+  color: whitesmoke;
+}
+h2 {
+  text-decoration: underline;
+}
+#René {
+  height: 500px;
+  margin-top: 50px;
+  opacity: 0;
+  transform: scale(2);
+  transition: 1s;
+}
+#phi {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  opacity: 1;
+  transition: 1s;
+}
+
+.animation {
+  margin-top: 50px;
+  .bee-area {
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+    height: 500px;
+    border: 5px solid rgb(214, 211, 23);
+    background: url(../images/prairie.jpg) center/cover;
+    opacity: 0.8;
+
+    #maya {
+      position: absolute;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      animation: bzz 1s infinite linear;
+      cursor: grab;
+    }
+  }
+}
+
+@keyframes bzz {
+  0% {
+    transform: rotate(0deg);
+    scale: 0.5;
+  }
+  50% {
+    transform: rotate(180deg);
+    scale: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1.5;
+  }
+}
