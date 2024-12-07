@@ -12,9 +12,11 @@ body {
   min-height: 200vh;
   overflow-x: hidden;
   background: rgb(60, 60, 100);
-  background: -webkit-gradient(linear, left bottom, left top, from(rgb(31, 52, 128)), to(rgb(60, 60, 100)));
-  background: linear-gradient(0deg, rgb(31, 52, 128) 0%, rgb(60, 60, 100) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(18, 81, 81)), to(rgb(60, 60, 100)));
+  background: linear-gradient(0deg, rgb(18, 81, 81) 0%, rgb(60, 60, 100) 100%);
   text-align: center;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 .mouse {
@@ -146,14 +148,117 @@ body {
   cursor: pointer;
 }
 
-h1 {
+.titre-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  z-index: -1;
+}
+
+.titre {
   margin-top: 100px;
   font-size: 5rem;
   color: whitesmoke;
 }
 
+#target {
+  margin-left: 2rem;
+  color: rgb(168, 124, 15);
+}
+
+#title {
+  position: relative;
+}
+#title::after {
+  content: "";
+  position: absolute;
+  height: 5rem;
+  width: 15px;
+  background: rgba(0, 0, 0, 0.638);
+  top: 0;
+  -webkit-box-shadow: 0 0 10px 9px rgb(129, 111, 22);
+          box-shadow: 0 0 10px 9px rgb(129, 111, 22);
+  right: -30px;
+  -webkit-animation: anim 0.8s linear infinite;
+          animation: anim 0.8s linear infinite;
+}
+@-webkit-keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 h2 {
   text-decoration: underline;
+}
+
+#rouge {
+  color: black;
+  background: red;
+  padding: 10px;
+  border: 3px solid black;
+  text-transform: uppercase;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 2px 5px 0 black;
+          box-shadow: 1px 2px 5px 0 black;
+  text-align: right;
+  margin-right: 15px;
+  z-index: 6;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+#rouge:hover {
+  scale: 1.1;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+#bleu {
+  color: whitesmoke;
+  background: rgb(60, 60, 100);
+  padding: 10px;
+  border: 3px solid whitesmoke;
+  text-transform: uppercase;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 2px 5px 0 black;
+          box-shadow: 1px 2px 5px 0 black;
+  text-align: right;
+  margin-right: 15px;
+  z-index: 6;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  display: none;
+}
+#bleu:hover {
+  scale: 1.1;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 #René {

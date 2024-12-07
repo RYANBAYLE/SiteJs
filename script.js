@@ -1,3 +1,4 @@
+// la souris-----------------------------------
 const mouse = document.querySelectorAll(".mouse");
 
 window.addEventListener("mousemove", (e) => {
@@ -17,6 +18,8 @@ window.addEventListener("mousemove", (e) => {
 //   });
 // });
 
+// La nav----------------------------
+
 const nav = document.querySelector("nav");
 const René = document.getElementById("René");
 const phi = document.getElementById("phi");
@@ -32,6 +35,7 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = scroll;
 
+  // l'image d'entrée-----------------------
   let scrollValue =
     (window.scrollY + window.innerHeight) / document.body.offsetHeight;
 
@@ -48,6 +52,68 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// anim Titre--------------------------
+const target = document.getElementById("target");
+let array = ["Site", "Projet", "Talent"];
+let WordIndex = 0;
+let LetterIndex = 0;
+
+const createLetter = () => {
+  const letter = document.createElement("span");
+  target.appendChild(letter);
+
+  letter.textContent = array[WordIndex][LetterIndex];
+  setTimeout(() => {
+    letter.remove();
+  }, 2000);
+};
+
+const loop = () => {
+  setTimeout(() => {
+    if (WordIndex >= array.length) {
+      WordIndex = 0;
+      LetterIndex = 0;
+
+      loop();
+    } else if (LetterIndex < array[WordIndex].length) {
+      createLetter();
+      LetterIndex++;
+
+      loop();
+    } else {
+      WordIndex++;
+      LetterIndex = 0;
+      setTimeout(() => {
+        loop();
+      }, 2000);
+    }
+  }, 60);
+};
+loop();
+// Le mode Rouge--------------------------
+
+const red = document.getElementById("rouge");
+
+document.body.addEventListener("click", (e) => {
+  switch (e.target.id) {
+    case "rouge":
+      document.body.style.background = "red";
+      red.style.display = "none";
+      bleu.style.display = "block";
+      break;
+    case "bleu":
+      document.body.style.background =
+        "linear-gradient(0deg,rgb(18, 81, 81) 0%,rgba(60, 60, 100, 1) 100%)";
+      red.style.display = "block";
+      bleu.style.display = "none";
+      document.body.style.transition = "0.5s ease";
+      break;
+    default:
+      null;
+  }
+});
+
+// la side bar --------------------------
 const btn = document.getElementById("btn");
 
 const sideBar = document.getElementById("side-bar");
@@ -69,6 +135,7 @@ setInterval(() => {
   mouv();
 }, 2000);
 
+// chope l'abeille-------------------------
 const maya = document.querySelector("#maya");
 const beeArea = document.querySelector(".bee-area");
 
