@@ -1,0 +1,32 @@
+.nav {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(60, 60, 100, 0.5) 1%,
+    rgb(176, 176, 176) 100%
+  );
+  position: fixed;
+  transition: 0.6s ease-in-out;
+  z-index: 5;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+
+    li {
+      font-size: 1.5rem;
+      z-index: 6;
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          scale: 1.2;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

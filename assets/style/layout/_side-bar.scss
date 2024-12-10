@@ -1,0 +1,51 @@
+#side-bar {
+  position: fixed;
+  left: -20%;
+  top: 100px;
+  height: 500px;
+  width: 20%;
+  background: whitesmoke;
+  transition: 0.5s ease;
+  .burger {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    z-index: 6;
+    cursor: pointer;
+    height: 75px;
+    width: 75px;
+    span {
+      display: block;
+      height: 10px;
+      width: 50px;
+      margin: 5px;
+      background: whitesmoke;
+      cursor: pointer;
+    }
+  }
+  p {
+    font-size: 2rem;
+    margin: 150px 15px;
+    padding: 15px;
+    background: rgb(60, 60, 100);
+  }
+}
+#side-bar.active {
+  left: 0;
+  box-shadow: 3px 3px 1px 1px black;
+  z-index: 6;
+}
+.active {
+  span {
+    position: absolute;
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}

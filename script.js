@@ -1,4 +1,6 @@
-// la souris-----------------------------------
+// --------------------------------------------
+// la souris
+// --------------------------------------------
 const mouse = document.querySelectorAll(".mouse");
 
 window.addEventListener("mousemove", (e) => {
@@ -18,8 +20,9 @@ window.addEventListener("mousemove", (e) => {
 //   });
 // });
 
-// La nav----------------------------
-
+// ----------------------------------------
+// La nav
+// ----------------------------------------
 const nav = document.querySelector("nav");
 const René = document.getElementById("René");
 const phi = document.getElementById("phi");
@@ -35,7 +38,9 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = scroll;
 
-  // l'image d'entrée-----------------------
+  // ---------------------------------------
+  // l'image d'entrée
+  // ---------------------------------------
   let scrollValue =
     (window.scrollY + window.innerHeight) / document.body.offsetHeight;
 
@@ -52,7 +57,9 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// anim Titre--------------------------
+// -------------------------------------------
+// anim Titre
+// -------------------------------------------
 const target = document.getElementById("target");
 let array = ["Site", "Projet", "Talent"];
 let WordIndex = 0;
@@ -90,7 +97,56 @@ const loop = () => {
   }, 60);
 };
 loop();
-// Le mode Rouge--------------------------
+
+// ----------------------------------------------
+// multicolor
+// ----------------------------------------------
+const multicolor = document.querySelector(".multicolor");
+
+function changecolor() {
+  let rgb1 = 0;
+  let rgb2 = 0;
+  let rgb3 = 0;
+  rgb1 = Math.floor(Math.random(rgb1) * 255);
+  rgb2 = Math.floor(Math.random(rgb1) * 255);
+  rgb3 = Math.floor(Math.random(rgb1) * 255);
+
+  let color = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
+
+  multicolor.style.background = color;
+  multicolor.style.transition = "2s ease";
+}
+setInterval(changecolor, 2000);
+
+// -----------------------------------------------
+// Drag
+// -----------------------------------------------
+let isDragging = false;
+let offsetX, offsetY;
+
+multicolor.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  offsetX = e.clientX - multicolor.offsetLeft;
+  offsetY = e.clientY - multicolor.offsetTop;
+  multicolor.style.cursor = "grabbing";
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    multicolor.style.left = `${e.clientX - offsetX}px`;
+    multicolor.style.top = `${e.clientY - offsetY}px`;
+    multicolor.style.transition = "0s ease";
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  multicolor.style.cursor = "grab";
+});
+
+// ---------------------------------------------
+// Le mode Rouge
+// ---------------------------------------------
 
 const red = document.getElementById("rouge");
 
@@ -113,7 +169,9 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
-// la side bar --------------------------
+// ------------------------------------------
+// la side bar
+// ------------------------------------------
 const btn = document.getElementById("btn");
 
 const sideBar = document.getElementById("side-bar");
@@ -135,7 +193,9 @@ setInterval(() => {
   mouv();
 }, 2000);
 
-// chope l'abeille-------------------------
+// ----------------------------------------------
+// chope l'abeille
+// ----------------------------------------------
 const maya = document.querySelector("#maya");
 const beeArea = document.querySelector(".bee-area");
 

@@ -1,0 +1,35 @@
+.animation {
+  margin-top: 50px;
+  .bee-area {
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+    height: 500px;
+    border: 5px solid rgb(214, 211, 23);
+    background: url(../images/prairie.jpg) center/cover;
+    opacity: 0.8;
+
+    #maya {
+      position: absolute;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      animation: bzz 1s infinite linear;
+      cursor: grab;
+    }
+  }
+}
+
+@keyframes bzz {
+  0% {
+    transform: rotate(0deg);
+    scale: 0.5;
+  }
+  50% {
+    transform: rotate(180deg);
+    scale: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1.5;
+  }
+}

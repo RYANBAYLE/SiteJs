@@ -1,0 +1,46 @@
+.titre-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: -1;
+}
+.titre {
+  margin-top: 100px;
+  font-size: 5rem;
+  color: whitesmoke;
+}
+#target {
+  margin-left: 2rem;
+  color: rgb(168, 124, 15);
+}
+#title {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 5rem;
+    width: 15px;
+    background: rgba(0, 0, 0, 0.638);
+    top: 0;
+    box-shadow: 0 0 10px 9px rgb(129, 111, 22);
+    right: -30px;
+
+    animation: anim 0.8s linear infinite;
+
+    @keyframes anim {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+h2 {
+  text-decoration: underline;
+}
